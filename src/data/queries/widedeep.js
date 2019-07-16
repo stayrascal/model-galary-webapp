@@ -10,7 +10,7 @@ const widedeep = {
   },
   async resolve(_, { queryObj }) {
     console.info(`query start for request: ${queryObj}`);
-    const tfServerUrl = `${process.env.SERVING_HTTP_URL || 'http://localhost:8000'}/wdn/movie`;
+    const tfServerUrl = `${process.env.SERVING_HTTP_URL || 'http://localhost:8001'}/wdn/movie`;
     const queryUrl = `${tfServerUrl}?${queryObj}`;
     const queryResponse = await fetch(queryUrl);
     const queryResult = await queryResponse.json();
